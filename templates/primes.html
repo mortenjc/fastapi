@@ -1,0 +1,26 @@
+{% include 'header.inc' %}
+
+<body>
+  <div class="mx-4">
+    <p class="text-2xl font-boldd mb-4">List of numbers</p>
+
+    <table class="min-w-[50%] mb-4">
+      <thead class="border-b test-lg">
+        <tr>
+          <th class="border">Index</th>
+          <th class="border">{{type}}</th>
+        </tr>
+      </thead>
+      <tbody id="table-numbers">
+        {% include 'table.html' %}
+      </tbody>
+    </table>
+
+    <button class="px-3 py-1 bg-blue-600 text-white ml-4"
+       hx-get="/primes" hx-target="#table-numbers">Reload</button>
+     <button class="px-3 py-1 bg-blue-600 text-white ml-4"
+       hx-get="/" hx-target="body">Home</button>
+  </div>
+
+</body>
+</html>
